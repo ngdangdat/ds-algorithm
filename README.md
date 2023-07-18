@@ -1,1 +1,3 @@
-# Data structure and Algorithm journey
+# Algorithm
+
+
