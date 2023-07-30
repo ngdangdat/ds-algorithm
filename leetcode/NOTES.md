@@ -1,7 +1,9 @@
 # Notes
+## 00 
+
 > https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/
 
-## Problem understanding
+### Problem understanding
 - obstacles, [i] -> ith obstacle
 - Length of longest obstacle course
   - Choose 0 and i inclusive
@@ -9,9 +11,9 @@
   - Taller or same height as the one right before it 
 - Return array of length of longest obstacle course up to i
 
-## Approaches
+### Approaches
 
-### Approach 1
+#### Approach 1
 
 - Iterate, counter i
     - If current index == 0: ans[i]
@@ -20,7 +22,7 @@
 
 - O notation: O(n^2)
 
-### Approach 2 -- Leetcode
+#### Approach 2 -- Leetcode
 - Idea greedy approach + binary search
 - Create a temporary vector called `lis` Longest Increase Subsequence (LIS)
 - Iterate
@@ -29,6 +31,12 @@
     - If `idx < lis.size()`: insert num at `idx`
 - `ans[i] = idx + 1`
 
-## Timer
+### Timer
 - 1st: 15
 - 2nd: 16
+
+## 01
+
+> https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150
+
+### Understand the problem
