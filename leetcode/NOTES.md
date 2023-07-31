@@ -37,6 +37,28 @@
 
 ## 01
 
-> https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150
+> https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
 
-### Understand the problem
+## 02
+
+> https://leetcode.com/problems/majority-element/
+
+```C++
+m = n / 2
+```
+
+## 03
+
+> https://leetcode.com/problems/rotate-array/
+
+- Input to a new array
+- Iterate through new array -> put back to current array
+
+```C++
+{1,2,3,4,5,6,7}
+
+
+
+// target
+{5,6,7,1,2,3,4}
+```
