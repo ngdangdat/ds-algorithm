@@ -1,13 +1,14 @@
 # Algorithm
 
+Start date: 2025-07-07
+
 ## Programming Language
-- Let's try C++
+- C++
+- Go
 
-## Problems
-> - [Date]: Problem title
->   - Notes
+## Classifier
+- [berknology/leetcode-classifier](https://github.com/berknology/leetcode-classifier?tab=readme-ov-file#linked-list)
 
-- [2023-07-18 & 19: Find longest obstacle course](https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/)
-  - Greedy approach.
-  - Checked solution.
-
+## Groups
+### Linked list
+- [Reverse linked list](https://leetcode.com/problems/reverse-linked-list/description/)
