@@ -11,4 +11,5 @@ Start date: 2025-07-07
 
 ## Groups
 ### Linked list
-- [Reverse linked list](https://leetcode.com/problems/reverse-linked-list/description/)
+- [206. Reverse linked list](https://leetcode.com/problems/reverse-linked-list/description/)
+- [021. Merge two sorted lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
