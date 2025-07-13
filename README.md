@@ -17,4 +17,5 @@ Start date: 2025-07-07
 - [024. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
 - [160. Intersection of two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
 - [206. Reverse linked list](https://leetcode.com/problems/reverse-linked-list/description/)
+- [328. Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/description/)
 - [725. Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/description/)

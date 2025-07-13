@@ -1,7 +1,6 @@
 package main
 
 import (
-	"reflect"
 	"testing"
 )
 
@@ -42,7 +41,7 @@ func TestOddEvenList(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			head := ListNodeFromIntList(tt.list)
 			result := oddEvenList(head)
-			
+
 			// Convert result back to slice for comparison
 			var resultSlice []int
 			current := result
@@ -50,8 +49,8 @@ func TestOddEvenList(t *testing.T) {
 				resultSlice = append(resultSlice, current.Val)
 				current = current.Next
 			}
-			
-			if !reflect.DeepEqual(resultSlice, tt.expected) {
+
+			if !result.IsEqual(ListNodeFromIntList(tt.expected)) {
 				t.Errorf("oddEvenList() = %v, want %v", resultSlice, tt.expected)
 			}
 		})

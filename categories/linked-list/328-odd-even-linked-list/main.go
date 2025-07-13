@@ -2,20 +2,64 @@ package main
 
 import "fmt"
 
-// ListNode definition
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // oddEvenList rearranges the linked list to group odd and even positioned nodes
 func oddEvenList(head *ListNode) *ListNode {
-	// TODO: Implement the solution
-	// Hint: Use odd and even pointers, and a node to save the head of the even list
-	return nil
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	oddNode := head
+	evenNode := head.Next
+	evenStart := evenNode
+
+	for oddNode != nil && evenNode != nil {
+		oddNode.Next = evenNode.Next
+		if evenNode != evenStart {
+			evenNode.Next = oddNode.Next
+		}
+		evenNode = evenNode.Next
+		oddNode = oddNode.Next
+	}
+
+	oddNode.Next = evenStart
+
+	return head
 }
 
 func main() {
-	// Test case example
 	fmt.Println("328. Odd Even Linked List")
+
+	// Test case 1: [1,2] -> [1,2]
+	fmt.Println("\nTest case 1: 4 elements")
+	nums1 := []int{1, 2, 3, 4}
+	head1 := ListNodeFromIntList(nums1)
+
+	fmt.Print("Original: ")
+	head1.Print()
+
+	result1 := oddEvenList(head1)
+	fmt.Print("Result:   ")
+	result1.Print()
+
+	// Test case 2: [1,2,3,4,5] -> [1,3,5,2,4]
+	fmt.Println("\nTest case 2: 5 elements")
+	nums2 := []int{1, 2, 3, 4, 5}
+	head2 := ListNodeFromIntList(nums2)
+
+	fmt.Print("Original: ")
+	head2.Print()
+
+	result2 := oddEvenList(head2)
+	fmt.Print("Result:   ")
+	result2.Print()
+
+	fmt.Println("\nTest case 3: 0 element")
+	nums3 := []int{}
+	head3 := ListNodeFromIntList(nums3)
+	fmt.Print("Original: ")
+	head3.Print()
+
+	result3 := oddEvenList(head3)
+	fmt.Print("Result:   ")
+	result3.Print()
 }

@@ -28,6 +28,10 @@ func (n *ListNode) IsEqual(head *ListNode) bool {
 }
 
 func (n *ListNode) Print() {
+	if n == nil {
+		fmt.Println("nil")
+		return
+	}
 	for n.Next != nil {
 		fmt.Printf("%d ", n.Val)
 		n = n.Next
