@@ -52,15 +52,15 @@ func TestSortList(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			head := ListNodeFromIntList(tt.list)
 			result := sortList(head)
-			
+
 			// Convert result back to slice for comparison
-			var resultSlice []int
+			var resultSlice []int = []int{}
 			current := result
 			for current != nil {
 				resultSlice = append(resultSlice, current.Val)
 				current = current.Next
 			}
-			
+
 			if !reflect.DeepEqual(resultSlice, tt.expected) {
 				t.Errorf("sortList() = %v, want %v", resultSlice, tt.expected)
 			}
