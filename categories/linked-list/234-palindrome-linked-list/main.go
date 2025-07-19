@@ -21,17 +21,14 @@ func isPalindrome(head *ListNode) bool {
 	}
 
 	mid := findMid(head)
-	// fmt.Printf("mid: %v\n", mid)
 	prev, curr := mid, mid.Next
 	prev.Next = nil
 	for curr != nil {
 		next := curr.Next
-		// fmt.Printf("prev: %v, curr: %v, next: %v\n", prev, curr, next)
 		curr.Next = prev
 
 		prev = curr
 		curr = next
-		// fmt.Printf("prev: %v, curr: %v\n", prev, curr)
 	}
 	reverseHead := prev
 	isEqual := true
