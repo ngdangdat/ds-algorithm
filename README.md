@@ -11,6 +11,7 @@ Start date: 2025-07-07
 
 ## Groups
 ### Binary Search
+- [034. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 - [069. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 - [074. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
 - [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
