@@ -1,0 +1,8 @@
+[package]
+name = "leetcode-2110"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "04-leetcode-2110"
+path = "main.rs"
