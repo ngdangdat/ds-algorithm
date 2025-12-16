@@ -1,33 +1,34 @@
-fn _quicksort(arr: &mut [i32], start: usize, end: usize) -> usize {
-    if end < start || (end - start) < 2 {
-        return
-    }
-    println!("start: {start}, end: {end}");
-    // pick start as pivot
-    let pivot = arr[end-1];
-    // less = 
-    // greater = 
-    let mut less_index = start;
-    for i in start..end {
-        if arr[i] < pivot {
-            let tmp = arr[i];
-            arr[i] = arr[less_index];
-            arr[less_index] = tmp;
-            less_index += 1;
+fn _quicksort_sort(arr: &mut [i32], low: usize, high: usize) -> isize {
+    let pivot = arr[low];
+    let mut index = high;
+    for i in (low+1..=high).into_iter().rev() {
+        if arr[i] >= pivot {
+            arr.swap(i, index);
+            index -= 1;
         }
     }
-    let tmp = arr[less_index];
-    arr[less_index] = pivot;
-    arr[end-1] = tmp;
-    less_index
+    arr.swap(low, index);
+    index as isize
+}
+
+fn _quicksort(arr: &mut [i32], low: usize, high: usize) {
+    if low < high {
+        let pivot = _quicksort_sort(arr, low, high);
+        if pivot >= 1 {
+            _quicksort(arr, low, (pivot-1) as usize);
+        }
+        _quicksort(arr, (pivot+1) as usize, high);
+    }
 }
 
 fn quicksort(arr: &mut [i32]) {
-    _quicksort(arr, 0, arr.len() - 1);
+    if arr.len() > 1 {
+        _quicksort(arr, 0, arr.len() - 1);
+    }
 }
 
 fn main() {
-    let mut arr = vec![3, 6, 8, 10, 1, 2, 1];
+    let mut arr = Vec::from([3,6,8,10,1,2,1]);
     println!("Before: {:?}", arr);
     quicksort(&mut arr);
     println!("After:  {:?}", arr);
