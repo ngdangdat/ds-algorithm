@@ -1,0 +1,153 @@
+{
+  "currentProblem": {
+    "category": "arrays-and-hashing",
+    "slug": "contains-duplicate"
+  },
+  "globalNN": 1,
+  "categories": {
+    "arrays-and-hashing": {
+      "order": 0,
+      "displayName": "Arrays & Hashing",
+      "problems": [
+        {"slug":"contains-duplicate","numericId":217,"name":"Contains Duplicate","url":"https://leetcode.com/problems/contains-duplicate/","nn":0,"status":"in-progress","grade":null},
+        {"slug":"valid-anagram","numericId":242,"name":"Valid Anagram","url":"https://leetcode.com/problems/valid-anagram/","nn":1,"status":"pending","grade":null},
+        {"slug":"two-sum","numericId":1,"name":"Two Sum","url":"https://leetcode.com/problems/two-sum/","nn":2,"status":"pending","grade":null},
+        {"slug":"group-anagrams","numericId":49,"name":"Group Anagrams","url":"https://leetcode.com/problems/group-anagrams/","nn":3,"status":"pending","grade":null},
+        {"slug":"top-k-frequent-elements","numericId":347,"name":"Top K Frequent Elements","url":"https://leetcode.com/problems/top-k-frequent-elements/","nn":4,"status":"pending","grade":null},
+        {"slug":"encode-and-decode-strings","numericId":271,"name":"Encode and Decode Strings","url":"https://leetcode.com/problems/encode-and-decode-strings/","nn":5,"status":"pending","grade":null},
+        {"slug":"product-of-array-except-self","numericId":238,"name":"Product of Array Except Self","url":"https://leetcode.com/problems/product-of-array-except-self/","nn":6,"status":"pending","grade":null},
+        {"slug":"valid-sudoku","numericId":36,"name":"Valid Sudoku","url":"https://leetcode.com/problems/valid-sudoku/","nn":7,"status":"pending","grade":null},
+        {"slug":"longest-consecutive-sequence","numericId":128,"name":"Longest Consecutive Sequence","url":"https://leetcode.com/problems/longest-consecutive-sequence/","nn":8,"status":"pending","grade":null},
+        {"slug":"intersection-of-two-arrays","numericId":349,"name":"Intersection of Two Arrays","url":"https://leetcode.com/problems/intersection-of-two-arrays/","nn":9,"status":"pending","grade":null},
+        {"slug":"contains-duplicate-ii","numericId":219,"name":"Contains Duplicate II","url":"https://leetcode.com/problems/contains-duplicate-ii/","nn":10,"status":"pending","grade":null},
+        {"slug":"set-matrix-zeroes","numericId":73,"name":"Set Matrix Zeroes","url":"https://leetcode.com/problems/set-matrix-zeroes/","nn":11,"status":"pending","grade":null},
+        {"slug":"spiral-matrix","numericId":54,"name":"Spiral Matrix","url":"https://leetcode.com/problems/spiral-matrix/","nn":12,"status":"pending","grade":null},
+        {"slug":"3sum","numericId":15,"name":"3Sum","url":"https://leetcode.com/problems/3sum/","nn":13,"status":"pending","grade":null},
+        {"slug":"4sum","numericId":18,"name":"4Sum","url":"https://leetcode.com/problems/4sum/","nn":14,"status":"pending","grade":null},
+        {"slug":"subarray-sum-equals-k","numericId":560,"name":"Subarray Sum Equals K","url":"https://leetcode.com/problems/subarray-sum-equals-k/","nn":15,"status":"pending","grade":null},
+        {"slug":"sliding-window-maximum","numericId":239,"name":"Sliding Window Maximum","url":"https://leetcode.com/problems/sliding-window-maximum/","nn":16,"status":"pending","grade":null},
+        {"slug":"minimum-window-substring","numericId":76,"name":"Minimum Window Substring","url":"https://leetcode.com/problems/minimum-window-substring/","nn":17,"status":"pending","grade":null},
+        {"slug":"longest-substring-without-repeating-characters","numericId":3,"name":"Longest Substring Without Repeating Characters","url":"https://leetcode.com/problems/longest-substring-without-repeating-characters/","nn":18,"status":"pending","grade":null}
+      ]
+    },
+    "two-pointers": {
+      "order": 1,
+      "displayName": "Two Pointers",
+      "problems": [
+        {"slug":"reverse-string","numericId":344,"name":"Reverse String","url":"https://leetcode.com/problems/reverse-string/","nn":19,"status":"pending","grade":null},
+        {"slug":"valid-palindrome","numericId":125,"name":"Valid Palindrome","url":"https://leetcode.com/problems/valid-palindrome/","nn":20,"status":"pending","grade":null},
+        {"slug":"remove-duplicates-from-sorted-array","numericId":26,"name":"Remove Duplicates from Sorted Array","url":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","nn":21,"status":"pending","grade":null},
+        {"slug":"move-zeroes","numericId":283,"name":"Move Zeroes","url":"https://leetcode.com/problems/move-zeroes/","nn":22,"status":"pending","grade":null},
+        {"slug":"two-sum-ii-input-array-is-sorted","numericId":167,"name":"Two Sum II","url":"https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/","nn":23,"status":"pending","grade":null},
+        {"slug":"merge-sorted-array","numericId":88,"name":"Merge Sorted Array","url":"https://leetcode.com/problems/merge-sorted-array/","nn":24,"status":"pending","grade":null},
+        {"slug":"linked-list-cycle","numericId":141,"name":"Linked List Cycle","url":"https://leetcode.com/problems/linked-list-cycle/","nn":25,"status":"pending","grade":null},
+        {"slug":"3sum","numericId":15,"name":"3Sum","url":"https://leetcode.com/problems/3sum/","nn":26,"status":"pending","grade":null},
+        {"slug":"container-with-most-water","numericId":11,"name":"Container With Most Water","url":"https://leetcode.com/problems/container-with-most-water/","nn":27,"status":"pending","grade":null},
+        {"slug":"sort-colors","numericId":75,"name":"Sort Colors","url":"https://leetcode.com/problems/sort-colors/","nn":28,"status":"pending","grade":null},
+        {"slug":"remove-nth-node-from-end-of-list","numericId":19,"name":"Remove Nth Node From End of List","url":"https://leetcode.com/problems/remove-nth-node-from-end-of-list/","nn":29,"status":"pending","grade":null},
+        {"slug":"partition-list","numericId":86,"name":"Partition List","url":"https://leetcode.com/problems/partition-list/","nn":30,"status":"pending","grade":null},
+        {"slug":"trapping-rain-water","numericId":42,"name":"Trapping Rain Water","url":"https://leetcode.com/problems/trapping-rain-water/","nn":31,"status":"pending","grade":null},
+        {"slug":"sliding-window-maximum","numericId":239,"name":"Sliding Window Maximum","url":"https://leetcode.com/problems/sliding-window-maximum/","nn":32,"status":"pending","grade":null},
+        {"slug":"palindrome-linked-list","numericId":234,"name":"Palindrome Linked List","url":"https://leetcode.com/problems/palindrome-linked-list/","nn":33,"status":"pending","grade":null}
+      ]
+    },
+    "stack": {
+      "order": 2,
+      "displayName": "Stack",
+      "problems": [
+        {"slug":"valid-parentheses","numericId":20,"name":"Valid Parentheses","url":"https://leetcode.com/problems/valid-parentheses/","nn":34,"status":"pending","grade":null},
+        {"slug":"min-stack","numericId":155,"name":"Min Stack","url":"https://leetcode.com/problems/min-stack/","nn":35,"status":"pending","grade":null},
+        {"slug":"next-greater-element-i","numericId":496,"name":"Next Greater Element I","url":"https://leetcode.com/problems/next-greater-element-i/","nn":36,"status":"pending","grade":null},
+        {"slug":"daily-temperatures","numericId":739,"name":"Daily Temperatures","url":"https://leetcode.com/problems/daily-temperatures/","nn":37,"status":"pending","grade":null},
+        {"slug":"generate-parentheses","numericId":22,"name":"Generate Parentheses","url":"https://leetcode.com/problems/generate-parentheses/","nn":38,"status":"pending","grade":null},
+        {"slug":"car-fleet","numericId":853,"name":"Car Fleet","url":"https://leetcode.com/problems/car-fleet/","nn":39,"status":"pending","grade":null},
+        {"slug":"remove-duplicate-letters","numericId":316,"name":"Remove Duplicate Letters","url":"https://leetcode.com/problems/remove-duplicate-letters/","nn":40,"status":"pending","grade":null},
+        {"slug":"asteroid-collision","numericId":735,"name":"Asteroid Collision","url":"https://leetcode.com/problems/asteroid-collision/","nn":41,"status":"pending","grade":null},
+        {"slug":"valid-parenthesis-string","numericId":678,"name":"Valid Parenthesis String","url":"https://leetcode.com/problems/valid-parenthesis-string/","nn":42,"status":"pending","grade":null},
+        {"slug":"maximal-rectangle","numericId":85,"name":"Maximal Rectangle","url":"https://leetcode.com/problems/maximal-rectangle/","nn":43,"status":"pending","grade":null},
+        {"slug":"largest-rectangle-in-histogram","numericId":84,"name":"Largest Rectangle In Histogram","url":"https://leetcode.com/problems/largest-rectangle-in-histogram/","nn":44,"status":"pending","grade":null},
+        {"slug":"minimum-remove-to-make-valid-parentheses","numericId":1249,"name":"Minimum Remove to Make Valid Parentheses","url":"https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/","nn":45,"status":"pending","grade":null},
+        {"slug":"flatten-nested-list-iterator","numericId":341,"name":"Flatten Nested List Iterator","url":"https://leetcode.com/problems/flatten-nested-list-iterator/","nn":46,"status":"pending","grade":null},
+        {"slug":"palindrome-linked-list","numericId":234,"name":"Palindrome Linked List","url":"https://leetcode.com/problems/palindrome-linked-list/","nn":47,"status":"pending","grade":null},
+        {"slug":"reverse-substrings-between-each-pair-of-parentheses","numericId":1190,"name":"Reverse Substrings Between Each Pair of Parentheses","url":"https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/","nn":48,"status":"pending","grade":null}
+      ]
+    },
+    "binary-search": {
+      "order": 3,
+      "displayName": "Binary Search",
+      "problems": [
+        {"slug":"binary-search","numericId":704,"name":"Binary Search","url":"https://leetcode.com/problems/binary-search/","nn":49,"status":"pending","grade":null},
+        {"slug":"search-insert-position","numericId":35,"name":"Search Insert Position","url":"https://leetcode.com/problems/search-insert-position/","nn":50,"status":"pending","grade":null},
+        {"slug":"first-bad-version","numericId":278,"name":"First Bad Version","url":"https://leetcode.com/problems/first-bad-version/","nn":51,"status":"pending","grade":null},
+        {"slug":"search-a-2d-matrix","numericId":74,"name":"Search a 2D Matrix","url":"https://leetcode.com/problems/search-a-2d-matrix/","nn":52,"status":"pending","grade":null},
+        {"slug":"koko-eating-bananas","numericId":875,"name":"Koko Eating Bananas","url":"https://leetcode.com/problems/koko-eating-bananas/","nn":53,"status":"pending","grade":null},
+        {"slug":"find-minimum-in-rotated-sorted-array","numericId":153,"name":"Find Minimum In Rotated Sorted Array","url":"https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/","nn":54,"status":"pending","grade":null},
+        {"slug":"search-in-rotated-sorted-array","numericId":33,"name":"Search In Rotated Sorted Array","url":"https://leetcode.com/problems/search-in-rotated-sorted-array/","nn":55,"status":"pending","grade":null},
+        {"slug":"find-peak-element","numericId":162,"name":"Find Peak Element","url":"https://leetcode.com/problems/find-peak-element/","nn":56,"status":"pending","grade":null},
+        {"slug":"perfect-squares","numericId":279,"name":"Perfect Squares","url":"https://leetcode.com/problems/perfect-squares/","nn":57,"status":"pending","grade":null},
+        {"slug":"find-the-duplicate-number","numericId":287,"name":"Find the Duplicate Number","url":"https://leetcode.com/problems/find-the-duplicate-number/","nn":58,"status":"pending","grade":null},
+        {"slug":"sqrtx","numericId":69,"name":"Sqrt(x)","url":"https://leetcode.com/problems/sqrtx/","nn":59,"status":"pending","grade":null},
+        {"slug":"time-based-key-value-store","numericId":981,"name":"Time Based Key-Value Store","url":"https://leetcode.com/problems/time-based-key-value-store/","nn":60,"status":"pending","grade":null},
+        {"slug":"median-of-two-sorted-arrays","numericId":4,"name":"Median of Two Sorted Arrays","url":"https://leetcode.com/problems/median-of-two-sorted-arrays/","nn":61,"status":"pending","grade":null},
+        {"slug":"count-of-smaller-numbers-after-self","numericId":315,"name":"Count of Smaller Numbers After Self","url":"https://leetcode.com/problems/count-of-smaller-numbers-after-self/","nn":62,"status":"pending","grade":null},
+        {"slug":"split-array-largest-sum","numericId":410,"name":"Split Array Largest Sum","url":"https://leetcode.com/problems/split-array-largest-sum/","nn":63,"status":"pending","grade":null}
+      ]
+    },
+    "sliding-window": {
+      "order": 4,
+      "displayName": "Sliding Window",
+      "problems": [
+        {"slug":"best-time-to-buy-and-sell-stock","numericId":121,"name":"Best Time to Buy and Sell Stock","url":"https://leetcode.com/problems/best-time-to-buy-and-sell-stock/","nn":64,"status":"pending","grade":null},
+        {"slug":"permutation-in-string","numericId":567,"name":"Permutation In String","url":"https://leetcode.com/problems/permutation-in-string/","nn":65,"status":"pending","grade":null},
+        {"slug":"fruit-into-baskets","numericId":904,"name":"Fruit Into Baskets","url":"https://leetcode.com/problems/fruit-into-baskets/","nn":66,"status":"pending","grade":null},
+        {"slug":"sliding-window-maximum","numericId":239,"name":"Sliding Window Maximum","url":"https://leetcode.com/problems/sliding-window-maximum/","nn":67,"status":"pending","grade":null},
+        {"slug":"longest-repeating-character-replacement","numericId":424,"name":"Longest Repeating Character Replacement","url":"https://leetcode.com/problems/longest-repeating-character-replacement/","nn":68,"status":"pending","grade":null},
+        {"slug":"minimum-window-substring","numericId":76,"name":"Minimum Window Substring","url":"https://leetcode.com/problems/minimum-window-substring/","nn":69,"status":"pending","grade":null},
+        {"slug":"subarray-product-less-than-k","numericId":713,"name":"Subarray Product Less Than K","url":"https://leetcode.com/problems/subarray-product-less-than-k/","nn":70,"status":"pending","grade":null},
+        {"slug":"count-number-of-nice-subarrays","numericId":1248,"name":"Count Number of Nice Subarrays","url":"https://leetcode.com/problems/count-number-of-nice-subarrays/","nn":71,"status":"pending","grade":null},
+        {"slug":"number-of-substrings-containing-all-three-characters","numericId":1358,"name":"Number of Substrings Containing All Three Characters","url":"https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/","nn":72,"status":"pending","grade":null},
+        {"slug":"number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold","numericId":1343,"name":"Subarrays of Size K with Average >= Threshold","url":"https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/","nn":73,"status":"pending","grade":null},
+        {"slug":"replace-the-substring-for-balanced-string","numericId":1234,"name":"Replace the Substring for Balanced String","url":"https://leetcode.com/problems/replace-the-substring-for-balanced-string/","nn":74,"status":"pending","grade":null}
+      ]
+    },
+    "linked-list": {
+      "order": 5,
+      "displayName": "Linked List",
+      "problems": [
+        {"slug":"reverse-linked-list","numericId":206,"name":"Reverse Linked List","url":"https://leetcode.com/problems/reverse-linked-list/","nn":75,"status":"pending","grade":null},
+        {"slug":"linked-list-cycle","numericId":141,"name":"Linked List Cycle","url":"https://leetcode.com/problems/linked-list-cycle/","nn":76,"status":"pending","grade":null},
+        {"slug":"merge-two-sorted-lists","numericId":21,"name":"Merge Two Sorted Lists","url":"https://leetcode.com/problems/merge-two-sorted-lists/","nn":77,"status":"pending","grade":null},
+        {"slug":"intersection-of-two-linked-lists","numericId":160,"name":"Intersection of Two Linked Lists","url":"https://leetcode.com/problems/intersection-of-two-linked-lists/","nn":78,"status":"pending","grade":null},
+        {"slug":"remove-nth-node-from-end-of-list","numericId":19,"name":"Remove Nth Node From End of List","url":"https://leetcode.com/problems/remove-nth-node-from-end-of-list/","nn":79,"status":"pending","grade":null},
+        {"slug":"reorder-list","numericId":143,"name":"Reorder List","url":"https://leetcode.com/problems/reorder-list/","nn":80,"status":"pending","grade":null},
+        {"slug":"add-two-numbers","numericId":2,"name":"Add Two Numbers","url":"https://leetcode.com/problems/add-two-numbers/","nn":81,"status":"pending","grade":null},
+        {"slug":"find-the-duplicate-number","numericId":287,"name":"Find the Duplicate Number","url":"https://leetcode.com/problems/find-the-duplicate-number/","nn":82,"status":"pending","grade":null},
+        {"slug":"palindrome-linked-list","numericId":234,"name":"Palindrome Linked List","url":"https://leetcode.com/problems/palindrome-linked-list/","nn":83,"status":"pending","grade":null},
+        {"slug":"flatten-a-multilevel-doubly-linked-list","numericId":430,"name":"Flatten a Linked List","url":"https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/","nn":84,"status":"pending","grade":null},
+        {"slug":"copy-list-with-random-pointer","numericId":138,"name":"Copy List With Random Pointer","url":"https://leetcode.com/problems/copy-list-with-random-pointer/","nn":85,"status":"pending","grade":null},
+        {"slug":"lru-cache","numericId":146,"name":"LRU Cache","url":"https://leetcode.com/problems/lru-cache/","nn":86,"status":"pending","grade":null},
+        {"slug":"linked-list-cycle-ii","numericId":142,"name":"Linked List Cycle II","url":"https://leetcode.com/problems/linked-list-cycle-ii/","nn":87,"status":"pending","grade":null},
+        {"slug":"swap-nodes-in-pairs","numericId":24,"name":"Swap Nodes in Pairs","url":"https://leetcode.com/problems/swap-nodes-in-pairs/","nn":88,"status":"pending","grade":null}
+      ]
+    },
+    "trees": {
+      "order": 6,
+      "displayName": "Trees",
+      "problems": [
+        {"slug":"maximum-depth-of-binary-tree","numericId":104,"name":"Maximum Depth of Binary Tree","url":"https://leetcode.com/problems/maximum-depth-of-binary-tree/","nn":89,"status":"pending","grade":null},
+        {"slug":"same-tree","numericId":100,"name":"Same Tree","url":"https://leetcode.com/problems/same-tree/","nn":90,"status":"pending","grade":null},
+        {"slug":"invert-binary-tree","numericId":226,"name":"Invert Binary Tree","url":"https://leetcode.com/problems/invert-binary-tree/","nn":91,"status":"pending","grade":null},
+        {"slug":"balanced-binary-tree","numericId":110,"name":"Balanced Binary Tree","url":"https://leetcode.com/problems/balanced-binary-tree/","nn":92,"status":"pending","grade":null},
+        {"slug":"diameter-of-binary-tree","numericId":543,"name":"Diameter of Binary Tree","url":"https://leetcode.com/problems/diameter-of-binary-tree/","nn":93,"status":"pending","grade":null},
+        {"slug":"lowest-common-ancestor-of-a-binary-search-tree","numericId":235,"name":"Lowest Common Ancestor of a BST","url":"https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/","nn":94,"status":"pending","grade":null},
+        {"slug":"subtree-of-another-tree","numericId":572,"name":"Subtree of Another Tree","url":"https://leetcode.com/problems/subtree-of-another-tree/","nn":95,"status":"pending","grade":null},
+        {"slug":"binary-tree-level-order-traversal","numericId":102,"name":"Binary Tree Level Order Traversal","url":"https://leetcode.com/problems/binary-tree-level-order-traversal/","nn":96,"status":"pending","grade":null},
+        {"slug":"path-sum","numericId":112,"name":"Path Sum","url":"https://leetcode.com/problems/path-sum/","nn":97,"status":"pending","grade":null},
+        {"slug":"convert-sorted-array-to-binary-search-tree","numericId":108,"name":"Convert Sorted Array to BST","url":"https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/","nn":98,"status":"pending","grade":null},
+        {"slug":"kth-smallest-element-in-a-bst","numericId":230,"name":"Kth Smallest Element in a BST","url":"https://leetcode.com/problems/kth-smallest-element-in-a-bst/","nn":99,"status":"pending","grade":null},
+        {"slug":"validate-binary-search-tree","numericId":98,"name":"Validate Binary Search Tree","url":"https://leetcode.com/problems/validate-binary-search-tree/","nn":100,"status":"pending","grade":null},
+        {"slug":"serialize-and-deserialize-binary-tree","numericId":297,"name":"Serialize and Deserialize Binary Tree","url":"https://leetcode.com/problems/serialize-and-deserialize-binary-tree/","nn":101,"status":"pending","grade":null}
+      ]
+    }
+  }
+}
