@@ -1,7 +1,7 @@
 {
   "currentProblem": {
     "category": "arrays-and-hashing",
-    "slug": "contains-duplicate"
+    "slug": "valid-anagram"
   },
   "globalNN": 1,
   "categories": {
@@ -10,7 +10,7 @@
       "displayName": "Arrays & Hashing",
       "problems": [
         {"slug":"contains-duplicate","numericId":217,"name":"Contains Duplicate","url":"https://leetcode.com/problems/contains-duplicate/","nn":0,"status":"in-progress","grade":null},
-        {"slug":"valid-anagram","numericId":242,"name":"Valid Anagram","url":"https://leetcode.com/problems/valid-anagram/","nn":1,"status":"pending","grade":null},
+        {"slug":"valid-anagram","numericId":242,"name":"Valid Anagram","url":"https://leetcode.com/problems/valid-anagram/","nn":1,"status":"in-progress","grade":null},
         {"slug":"two-sum","numericId":1,"name":"Two Sum","url":"https://leetcode.com/problems/two-sum/","nn":2,"status":"pending","grade":null},
         {"slug":"group-anagrams","numericId":49,"name":"Group Anagrams","url":"https://leetcode.com/problems/group-anagrams/","nn":3,"status":"pending","grade":null},
         {"slug":"top-k-frequent-elements","numericId":347,"name":"Top K Frequent Elements","url":"https://leetcode.com/problems/top-k-frequent-elements/","nn":4,"status":"pending","grade":null},
