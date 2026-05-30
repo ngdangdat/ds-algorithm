@@ -13,7 +13,7 @@
 | 238 | ✅ | Product of Array Except Self | A |
 | 36 | ✅ | Valid Sudoku | A |
 | 128 | ✅ | Longest Consecutive Sequence | A |
-| 349 | ⬜ | Intersection of Two Arrays | — |
+| 349 | ✅ | Intersection of Two Arrays | A |
 | 219 | ⬜ | Contains Duplicate II | — |
 | 73 | ⬜ | Set Matrix Zeroes | — |
 | 54 | ⬜ | Spiral Matrix | — |
