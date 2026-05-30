@@ -1,9 +1,9 @@
 {
   "currentProblem": {
     "category": "arrays-and-hashing",
-    "slug": "top-k-frequent-elements"
+    "slug": "encode-and-decode-strings"
   },
-  "globalNN": 3,
+  "globalNN": 4,
   "categories": {
     "arrays-and-hashing": {
       "order": 0,
@@ -13,7 +13,7 @@
         {"slug":"valid-anagram","numericId":242,"name":"Valid Anagram","url":"https://leetcode.com/problems/valid-anagram/","nn":1,"status":"completed","grade":"B"},
         {"slug":"two-sum","numericId":1,"name":"Two Sum","url":"https://leetcode.com/problems/two-sum/","nn":2,"status":"completed","grade":"B"},
         {"slug":"group-anagrams","numericId":49,"name":"Group Anagrams","url":"https://leetcode.com/problems/group-anagrams/","nn":3,"status":"completed","grade":"B"},
-        {"slug":"top-k-frequent-elements","numericId":347,"name":"Top K Frequent Elements","url":"https://leetcode.com/problems/top-k-frequent-elements/","nn":4,"status":"pending","grade":null},
+        {"slug":"top-k-frequent-elements","numericId":347,"name":"Top K Frequent Elements","url":"https://leetcode.com/problems/top-k-frequent-elements/","nn":4,"status":"done","grade":"B"},
         {"slug":"encode-and-decode-strings","numericId":271,"name":"Encode and Decode Strings","url":"https://leetcode.com/problems/encode-and-decode-strings/","nn":5,"status":"pending","grade":null},
         {"slug":"product-of-array-except-self","numericId":238,"name":"Product of Array Except Self","url":"https://leetcode.com/problems/product-of-array-except-self/","nn":6,"status":"pending","grade":null},
         {"slug":"valid-sudoku","numericId":36,"name":"Valid Sudoku","url":"https://leetcode.com/problems/valid-sudoku/","nn":7,"status":"pending","grade":null},

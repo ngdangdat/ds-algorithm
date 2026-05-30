@@ -8,7 +8,7 @@
 | 242 | ✅ | Valid Anagram | B |
 | 1 | ✅ | Two Sum | B |
 | 49 | ✅ | Group Anagrams | B |
-| 347 | ⬜ | Top K Frequent Elements | — |
+| 347 | ✅ | Top K Frequent Elements | B |
 | 271 | ⬜ | Encode and Decode Strings | — |
 | 238 | ⬜ | Product of Array Except Self | — |
 | 36 | ⬜ | Valid Sudoku | — |
