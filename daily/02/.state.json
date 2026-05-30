@@ -20,7 +20,7 @@
         {"slug":"longest-consecutive-sequence","numericId":128,"name":"Longest Consecutive Sequence","url":"https://leetcode.com/problems/longest-consecutive-sequence/","nn":8,"status":"done","grade":"A"},
         {"slug":"intersection-of-two-arrays","numericId":349,"name":"Intersection of Two Arrays","url":"https://leetcode.com/problems/intersection-of-two-arrays/","nn":9,"status":"done","grade":"A"},
         {"slug":"contains-duplicate-ii","numericId":219,"name":"Contains Duplicate II","url":"https://leetcode.com/problems/contains-duplicate-ii/","nn":10,"status":"done","grade":"A"},
-        {"slug":"set-matrix-zeroes","numericId":73,"name":"Set Matrix Zeroes","url":"https://leetcode.com/problems/set-matrix-zeroes/","nn":11,"status":"done","grade":"C"},
+        {"slug":"set-matrix-zeroes","numericId":73,"name":"Set Matrix Zeroes","url":"https://leetcode.com/problems/set-matrix-zeroes/","nn":11,"status":"done","grade":"A"},
         {"slug":"spiral-matrix","numericId":54,"name":"Spiral Matrix","url":"https://leetcode.com/problems/spiral-matrix/","nn":12,"status":"pending","grade":null},
         {"slug":"3sum","numericId":15,"name":"3Sum","url":"https://leetcode.com/problems/3sum/","nn":13,"status":"pending","grade":null},
         {"slug":"4sum","numericId":18,"name":"4Sum","url":"https://leetcode.com/problems/4sum/","nn":14,"status":"pending","grade":null},

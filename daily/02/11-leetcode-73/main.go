@@ -1,38 +1,47 @@
 package main
 
-func setRowColZeroes(matrix [][]int, visited map[[2]int]bool, r, c, maxR, maxC int) {
-	for er := range maxR {
-		if visited[[2]int{er, c}] {
-			continue
-		}
-		if matrix[er][c] != 0 {
-			visited[[2]int{er, c}] = true
-		}
-		matrix[er][c] = 0
-	}
-	for ec := range maxC {
-		if visited[[2]int{r, ec}] {
-			continue
-		}
-		if matrix[r][ec] != 0 {
-			visited[[2]int{r, ec}] = true
-		}
-		matrix[r][ec] = 0
-	}
-}
-
 func setZeroes(matrix [][]int) {
-	visited := make(map[[2]int]bool)
 	maxR := len(matrix)
 	maxC := len(matrix[0])
+	firstRowHasZero := false
+	firstColHasZero := false
 	for r, cs := range matrix {
 		for c, v := range cs {
-			if visited[[2]int{r, c}] {
-				continue
-			}
 			if v == 0 {
-				setRowColZeroes(matrix, visited, r, c, maxR, maxC)
+				if r == 0 {
+					firstRowHasZero = true
+				}
+				if c == 0 {
+					firstColHasZero = true
+				}
+				matrix[0][c] = 0
+				matrix[r][0] = 0
 			}
 		}
+	}
+	for r := 1; r < maxR; r++ {
+		if matrix[r][0] == 0 {
+			for c := range maxC {
+				matrix[r][c] = 0
+			}
+		}
+	}
+	for c := 1; c < maxC; c++ {
+		if matrix[0][c] == 0 {
+			for r := range maxR {
+				matrix[r][c] = 0
+			}
+		}
+	}
+	if firstRowHasZero {
+		for c := range maxC {
+			matrix[0][c] = 0
+		}
+	}
+	if firstColHasZero {
+		for r := range maxR {
+			matrix[r][0] = 0
+		}
+
 	}
 }
