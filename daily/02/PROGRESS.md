@@ -1,4 +1,4 @@
-# Daily Practice Progress
+# LeetCode Progress — Daily 02
 
 ## 🔢 Arrays & Hashing
 
@@ -9,8 +9,8 @@
 | 1 | ✅ | Two Sum | B |
 | 49 | ✅ | Group Anagrams | B |
 | 347 | ✅ | Top K Frequent Elements | A |
-| 271 | ⏭️ | Encode and Decode Strings (Premium) | — |
-| 238 | 🔄 | Product of Array Except Self | — |
+| 271 | ⬜ | Encode and Decode Strings | — |
+| 238 | ✅ | Product of Array Except Self | C |
 | 36 | ⬜ | Valid Sudoku | — |
 | 128 | ⬜ | Longest Consecutive Sequence | — |
 | 349 | ⬜ | Intersection of Two Arrays | — |
@@ -24,7 +24,7 @@
 | 76 | ⬜ | Minimum Window Substring | — |
 | 3 | ⬜ | Longest Substring Without Repeating Characters | — |
 
-## 👣 Two Pointers
+## Two Pointers
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
@@ -44,7 +44,7 @@
 | 239 | ⬜ | Sliding Window Maximum | — |
 | 234 | ⬜ | Palindrome Linked List | — |
 
-## 🏗️ Stack
+## Stack
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
@@ -64,7 +64,7 @@
 | 234 | ⬜ | Palindrome Linked List | — |
 | 1190 | ⬜ | Reverse Substrings Between Each Pair of Parentheses | — |
 
-## 🔍 Binary Search
+## Binary Search
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
@@ -84,7 +84,7 @@
 | 315 | ⬜ | Count of Smaller Numbers After Self | — |
 | 410 | ⬜ | Split Array Largest Sum | — |
 
-## 🪟 Sliding Window
+## Sliding Window
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
@@ -100,7 +100,7 @@
 | 1343 | ⬜ | Subarrays of Size K with Average >= Threshold | — |
 | 1234 | ⬜ | Replace the Substring for Balanced String | — |
 
-## 🔗 Linked List
+## Linked List
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
@@ -119,7 +119,7 @@
 | 142 | ⬜ | Linked List Cycle II | — |
 | 24 | ⬜ | Swap Nodes in Pairs | — |
 
-## 🌳 Trees
+## Trees
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
