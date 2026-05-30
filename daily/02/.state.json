@@ -1,9 +1,9 @@
 {
   "currentProblem": {
     "category": "arrays-and-hashing",
-    "slug": "valid-sudoku"
+    "slug": "longest-consecutive-sequence"
   },
-  "globalNN": 6,
+  "globalNN": 7,
   "categories": {
     "arrays-and-hashing": {
       "order": 0,
@@ -16,7 +16,7 @@
         {"slug":"top-k-frequent-elements","numericId":347,"name":"Top K Frequent Elements","url":"https://leetcode.com/problems/top-k-frequent-elements/","nn":4,"status":"done","grade":"A"},
         {"slug":"encode-and-decode-strings","numericId":271,"name":"Encode and Decode Strings","url":"https://leetcode.com/problems/encode-and-decode-strings/","nn":5,"status":"skipped","grade":null},
         {"slug":"product-of-array-except-self","numericId":238,"name":"Product of Array Except Self","url":"https://leetcode.com/problems/product-of-array-except-self/","nn":6,"status":"done","grade":"A"},
-        {"slug":"valid-sudoku","numericId":36,"name":"Valid Sudoku","url":"https://leetcode.com/problems/valid-sudoku/","nn":7,"status":"pending","grade":null},
+        {"slug":"valid-sudoku","numericId":36,"name":"Valid Sudoku","url":"https://leetcode.com/problems/valid-sudoku/","nn":7,"status":"done","grade":"B"},
         {"slug":"longest-consecutive-sequence","numericId":128,"name":"Longest Consecutive Sequence","url":"https://leetcode.com/problems/longest-consecutive-sequence/","nn":8,"status":"pending","grade":null},
         {"slug":"intersection-of-two-arrays","numericId":349,"name":"Intersection of Two Arrays","url":"https://leetcode.com/problems/intersection-of-two-arrays/","nn":9,"status":"pending","grade":null},
         {"slug":"contains-duplicate-ii","numericId":219,"name":"Contains Duplicate II","url":"https://leetcode.com/problems/contains-duplicate-ii/","nn":10,"status":"pending","grade":null},

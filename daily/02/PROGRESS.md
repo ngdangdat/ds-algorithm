@@ -11,7 +11,7 @@
 | 347 | ✅ | Top K Frequent Elements | A |
 | 271 | ⬜ | Encode and Decode Strings | — |
 | 238 | ✅ | Product of Array Except Self | A |
-| 36 | ⬜ | Valid Sudoku | — |
+| 36 | ✅ | Valid Sudoku | B |
 | 128 | ⬜ | Longest Consecutive Sequence | — |
 | 349 | ⬜ | Intersection of Two Arrays | — |
 | 219 | ⬜ | Contains Duplicate II | — |
