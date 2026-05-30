@@ -14,7 +14,7 @@
 | 36 | ✅ | Valid Sudoku | A |
 | 128 | ✅ | Longest Consecutive Sequence | A |
 | 349 | ✅ | Intersection of Two Arrays | A |
-| 219 | ⬜ | Contains Duplicate II | — |
+| 219 | ✅ | Contains Duplicate II | A |
 | 73 | ⬜ | Set Matrix Zeroes | — |
 | 54 | ⬜ | Spiral Matrix | — |
 | 15 | ⬜ | 3Sum | — |

@@ -1,9 +1,9 @@
 {
   "currentProblem": {
     "category": "arrays-and-hashing",
-    "slug": "contains-duplicate-ii"
+    "slug": "set-matrix-zeroes"
   },
-  "globalNN": 9,
+  "globalNN": 10,
   "categories": {
     "arrays-and-hashing": {
       "order": 0,
@@ -19,7 +19,7 @@
         {"slug":"valid-sudoku","numericId":36,"name":"Valid Sudoku","url":"https://leetcode.com/problems/valid-sudoku/","nn":7,"status":"done","grade":"A"},
         {"slug":"longest-consecutive-sequence","numericId":128,"name":"Longest Consecutive Sequence","url":"https://leetcode.com/problems/longest-consecutive-sequence/","nn":8,"status":"done","grade":"A"},
         {"slug":"intersection-of-two-arrays","numericId":349,"name":"Intersection of Two Arrays","url":"https://leetcode.com/problems/intersection-of-two-arrays/","nn":9,"status":"done","grade":"A"},
-        {"slug":"contains-duplicate-ii","numericId":219,"name":"Contains Duplicate II","url":"https://leetcode.com/problems/contains-duplicate-ii/","nn":10,"status":"pending","grade":null},
+        {"slug":"contains-duplicate-ii","numericId":219,"name":"Contains Duplicate II","url":"https://leetcode.com/problems/contains-duplicate-ii/","nn":10,"status":"done","grade":"A"},
         {"slug":"set-matrix-zeroes","numericId":73,"name":"Set Matrix Zeroes","url":"https://leetcode.com/problems/set-matrix-zeroes/","nn":11,"status":"pending","grade":null},
         {"slug":"spiral-matrix","numericId":54,"name":"Spiral Matrix","url":"https://leetcode.com/problems/spiral-matrix/","nn":12,"status":"pending","grade":null},
         {"slug":"3sum","numericId":15,"name":"3Sum","url":"https://leetcode.com/problems/3sum/","nn":13,"status":"pending","grade":null},
