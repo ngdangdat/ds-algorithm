@@ -1,22 +1,16 @@
 package main
 
 import (
-	"cmp"
 	"slices"
+	"strings"
 	"testing"
 )
 
-func groupSortFunc(a, b []string) int {
-	if len(a) == len(b) {
+func sortOuter(a, b []string) int {
+	if len(a) == 0 && len(b) == 0 {
 		return 0
 	}
-	if len(a) == 0 {
-		return -1
-	}
-	if len(b) == 0 {
-		return 1
-	}
-	return cmp.Compare(a[0], b[0])
+	return strings.Compare(a[0], b[0])
 }
 
 func TestAnagramGroup(t *testing.T) {
@@ -32,17 +26,31 @@ func TestAnagramGroup(t *testing.T) {
 				{"bat"},
 			},
 		},
+		{
+			strs:     []string{""},
+			expected: [][]string{{""}},
+		},
+		{
+			strs:     []string{"a"},
+			expected: [][]string{{"a"}},
+		},
 	}
 
 	for i, c := range cases {
 		got := groupAnagrams(c.strs)
-		slices.SortFunc(got, groupSortFunc)
-		slices.SortFunc(c.expected, groupSortFunc)
-		for gi, g := range got {
-			e := c.expected[gi]
-			if slices.Compare(e, g) > 0 {
-				t.Fatalf("Failed case %d, got=%v, expected=%v", i, got, c.expected)
-			}
+		for _, g := range got {
+			slices.Sort(g)
+		}
+		for _, e := range c.expected {
+			slices.Sort(e)
+		}
+		slices.SortFunc(got, sortOuter)
+		slices.SortFunc(c.expected, sortOuter)
+		eq := slices.EqualFunc(got, c.expected, func(a, b []string) bool {
+			return slices.Equal(a, b)
+		})
+		if !eq {
+			t.Fatalf("Case %d failed, got=%v, expected=%v\n", i, got, c.expected)
 		}
 	}
 

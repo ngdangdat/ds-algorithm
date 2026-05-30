@@ -1,28 +1,23 @@
 package main
 
-import (
-	"slices"
-)
-
-func classifyStr(s string) string {
-	runes := []rune(s)
-	slices.Sort(runes)
-	return string(runes)
+func classifyStr(s string) [26]int {
+	res := [26]int{}
+	for _, r := range []byte(s) {
+		subR := r - byte('a')
+		res[subR] += 1
+	}
+	return res
 }
 
 func groupAnagrams(strs []string) [][]string {
 	res := [][]string{}
-	groupMap := make(map[string][]string)
+	groupMap := make(map[[26]int][]string)
 	for _, s := range strs {
 		g := classifyStr(s)
 		groupMap[g] = append(groupMap[g], s)
 	}
 	for _, gs := range groupMap {
-		each := []string{}
-		for _, eg := range gs {
-			each = append(each, eg)
-		}
-		res = append(res, each)
+		res = append(res, gs)
 	}
 	return res
 }
