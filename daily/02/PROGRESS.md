@@ -9,8 +9,8 @@
 | 1 | ✅ | Two Sum | B |
 | 49 | ✅ | Group Anagrams | B |
 | 347 | ✅ | Top K Frequent Elements | A |
-| 271 | ⬜ | Encode and Decode Strings | — |
-| 238 | ⬜ | Product of Array Except Self | — |
+| 271 | ⏭️ | Encode and Decode Strings (Premium) | — |
+| 238 | 🔄 | Product of Array Except Self | — |
 | 36 | ⬜ | Valid Sudoku | — |
 | 128 | ⬜ | Longest Consecutive Sequence | — |
 | 349 | ⬜ | Intersection of Two Arrays | — |
