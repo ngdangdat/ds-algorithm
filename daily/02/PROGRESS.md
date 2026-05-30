@@ -7,7 +7,7 @@
 | 217 | 🔄 | Contains Duplicate | — |
 | 242 | ✅ | Valid Anagram | B |
 | 1 | ✅ | Two Sum | B |
-| 49 | ⬜ | Group Anagrams | — |
+| 49 | ✅ | Group Anagrams | B |
 | 347 | ⬜ | Top K Frequent Elements | — |
 | 271 | ⬜ | Encode and Decode Strings | — |
 | 238 | ⬜ | Product of Array Except Self | — |
