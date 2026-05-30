@@ -12,7 +12,7 @@
 | 271 | ⬜ | Encode and Decode Strings | — |
 | 238 | ✅ | Product of Array Except Self | A |
 | 36 | ✅ | Valid Sudoku | A |
-| 128 | ⬜ | Longest Consecutive Sequence | — |
+| 128 | ✅ | Longest Consecutive Sequence | A |
 | 349 | ⬜ | Intersection of Two Arrays | — |
 | 219 | ⬜ | Contains Duplicate II | — |
 | 73 | ⬜ | Set Matrix Zeroes | — |
