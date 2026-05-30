@@ -15,7 +15,7 @@
 | 128 | ✅ | Longest Consecutive Sequence | A |
 | 349 | ✅ | Intersection of Two Arrays | A |
 | 219 | ✅ | Contains Duplicate II | A |
-| 73 | ⬜ | Set Matrix Zeroes | — |
+| 73 | ✅ | Set Matrix Zeroes | C |
 | 54 | ⬜ | Spiral Matrix | — |
 | 15 | ⬜ | 3Sum | — |
 | 18 | ⬜ | 4Sum | — |
