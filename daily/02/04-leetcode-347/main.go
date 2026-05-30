@@ -6,13 +6,8 @@ func topKFrequent(nums []int, k int) []int {
 		countMap[n] += 1
 	}
 	reverseCountMap := make(map[int][]int)
-	fs := []int{}
 	for n, frequency := range countMap {
-		cm, ok := reverseCountMap[frequency]
-		if !ok {
-			fs = append(fs, frequency)
-		}
-		reverseCountMap[frequency] = append(cm, n)
+		reverseCountMap[frequency] = append(reverseCountMap[frequency], n)
 	}
 	taken := 0
 	res := []int{}
