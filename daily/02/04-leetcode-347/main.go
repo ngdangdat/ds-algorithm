@@ -1,9 +1,5 @@
 package main
 
-import (
-	"slices"
-)
-
 func topKFrequent(nums []int, k int) []int {
 	countMap := make(map[int]int)
 	for _, n := range nums {
@@ -18,22 +14,19 @@ func topKFrequent(nums []int, k int) []int {
 		}
 		reverseCountMap[frequency] = append(cm, n)
 	}
-	slices.SortFunc(fs, func(a, b int) int {
-		return b - a
-	})
 	taken := 0
 	res := []int{}
-	for _, frequency := range fs {
-		ns := reverseCountMap[frequency]
-		for _, n := range ns {
-			res = append(res, n)
+	for i := len(nums); taken < k; i-- {
+		cm, ok := reverseCountMap[i]
+		if !ok {
+			continue
+		}
+		for _, v := range cm {
+			res = append(res, v)
 			taken += 1
 			if taken >= k {
 				break
 			}
-		}
-		if taken >= k {
-			break
 		}
 	}
 
