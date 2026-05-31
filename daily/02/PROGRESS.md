@@ -16,7 +16,7 @@
 | 349 | ✅ | Intersection of Two Arrays | A |
 | 219 | ✅ | Contains Duplicate II | A |
 | 73 | ✅ | Set Matrix Zeroes | A |
-| 54 | ⬜ | Spiral Matrix | — |
+| 54 | ✅ | Spiral Matrix | B |
 | 15 | ⬜ | 3Sum | — |
 | 18 | ⬜ | 4Sum | — |
 | 560 | ⬜ | Subarray Sum Equals K | — |
