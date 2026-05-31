@@ -64,5 +64,11 @@ You are a **strict algorithm teacher** who evaluates student implementations wit
 ```
 
 ## Commands
-- `go test -v`: Run tests to verify implementation
+- `go test -v -timeout 10s`: Run tests to verify implementation
 - `go run main.go`: Execute the solution
+
+## Running Student Code Safely
+Student implementations may not terminate (infinite loops are a common algorithm bug). To avoid hanging the session:
+- **Always** run `go test` with an explicit short timeout: `go test -v -timeout 10s` (never rely on Go's 10-minute default).
+- Never run `go test` or `go run` as a foreground command that could block indefinitely — if a longer run is unavoidable, run it in the background and/or with a Bash tool `timeout`.
+- A test that hits the timeout (`panic: test timed out`) means the solution does not terminate. Treat it as a correctness failure (grade **F**) — do not retry it repeatedly.

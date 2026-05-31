@@ -20,9 +20,13 @@ Grade the solution for the current problem, regenerate the progress checklist, a
 
    If directory does not exist: Report "Problem directory missing. Run /next to scaffold it." Exit.
 
-4. **Run tests:** Execute `go test -v` in the problem directory. Capture all output.
+4. **Run tests:** Execute `go test -v -timeout 10s` in the problem directory. Capture all output.
+
+   **ALWAYS pass `-timeout 10s`** (or shorter). Student solutions can contain infinite loops; Go's default test timeout is 10 minutes, which will hang the session. The `-timeout` flag makes the test panic and exit fast instead. Never run `go test` without an explicit short timeout, and never run it as a foreground command that could block indefinitely.
 
    If output contains "no tests to run" or "no test files": Report "No test functions found. Write tests in `main_test.go` before running /checkout." Exit without grading or state change.
+
+   If output contains "panic: test timed out" or the run hits the timeout: treat the solution as **non-terminating (infinite loop)**. This is a correctness failure → grade **F** (same as a failing test, per AE4). Report the timeout as the reason and continue the flow.
 
 5. **Grade the solution:**
    - Read `main.go` from the problem directory.
