@@ -17,7 +17,7 @@
 | 219 | ✅ | Contains Duplicate II | A |
 | 73 | ✅ | Set Matrix Zeroes | A |
 | 54 | ✅ | Spiral Matrix | A |
-| 15 | 🔄 | 3Sum | — |
+| 15 | ✅ | 3Sum | A |
 | 18 | ⬜ | 4Sum | — |
 | 560 | ⬜ | Subarray Sum Equals K | — |
 | 239 | ⬜ | Sliding Window Maximum | — |
