@@ -18,7 +18,7 @@
 | 73 | ✅ | Set Matrix Zeroes | A |
 | 54 | ✅ | Spiral Matrix | A |
 | 15 | ✅ | 3Sum | A |
-| 18 | ⬜ | 4Sum | — |
+| 18 | ✅ | 4Sum | A |
 | 560 | ⬜ | Subarray Sum Equals K | — |
 | 239 | ⬜ | Sliding Window Maximum | — |
 | 76 | ⬜ | Minimum Window Substring | — |

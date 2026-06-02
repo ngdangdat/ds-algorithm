@@ -1,7 +1,7 @@
 {
   "currentProblem": {
     "category": "arrays-and-hashing",
-    "slug": "4sum"
+    "slug": "subarray-sum-equals-k"
   },
   "globalNN": 13,
   "categories": {
@@ -23,7 +23,7 @@
         {"slug":"set-matrix-zeroes","numericId":73,"name":"Set Matrix Zeroes","url":"https://leetcode.com/problems/set-matrix-zeroes/","nn":11,"status":"done","grade":"A"},
         {"slug":"spiral-matrix","numericId":54,"name":"Spiral Matrix","url":"https://leetcode.com/problems/spiral-matrix/","nn":12,"status":"done","grade":"A"},
         {"slug":"3sum","numericId":15,"name":"3Sum","url":"https://leetcode.com/problems/3sum/","nn":13,"status":"done","grade":"A"},
-        {"slug":"4sum","numericId":18,"name":"4Sum","url":"https://leetcode.com/problems/4sum/","nn":14,"status":"pending","grade":null},
+        {"slug":"4sum","numericId":18,"name":"4Sum","url":"https://leetcode.com/problems/4sum/","nn":14,"status":"done","grade":"A"},
         {"slug":"subarray-sum-equals-k","numericId":560,"name":"Subarray Sum Equals K","url":"https://leetcode.com/problems/subarray-sum-equals-k/","nn":15,"status":"pending","grade":null},
         {"slug":"sliding-window-maximum","numericId":239,"name":"Sliding Window Maximum","url":"https://leetcode.com/problems/sliding-window-maximum/","nn":16,"status":"pending","grade":null},
         {"slug":"minimum-window-substring","numericId":76,"name":"Minimum Window Substring","url":"https://leetcode.com/problems/minimum-window-substring/","nn":17,"status":"pending","grade":null},
