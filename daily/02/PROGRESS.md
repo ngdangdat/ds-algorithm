@@ -21,7 +21,7 @@
 | 18 | ✅ | 4Sum | A |
 | 560 | ⬜ | Subarray Sum Equals K | — |
 | 239 | ✅ | Sliding Window Maximum | A |
-| 76 | ⬜ | Minimum Window Substring | — |
+| 76 | ✅ | Minimum Window Substring | A |
 | 3 | ⬜ | Longest Substring Without Repeating Characters | — |
 
 ## 👣 Two Pointers
