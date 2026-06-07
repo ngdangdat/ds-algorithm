@@ -1,7 +1,7 @@
 {
   "currentProblem": {
-    "category": "arrays-and-hashing",
-    "slug": "longest-substring-without-repeating-characters"
+    "category": "two-pointers",
+    "slug": "reverse-string"
   },
   "globalNN": 13,
   "categories": {
@@ -27,7 +27,7 @@
         {"slug":"subarray-sum-equals-k","numericId":560,"name":"Subarray Sum Equals K","url":"https://leetcode.com/problems/subarray-sum-equals-k/","nn":15,"status":"done","grade":"A"},
         {"slug":"sliding-window-maximum","numericId":239,"name":"Sliding Window Maximum","url":"https://leetcode.com/problems/sliding-window-maximum/","nn":16,"status":"done","grade":"A"},
         {"slug":"minimum-window-substring","numericId":76,"name":"Minimum Window Substring","url":"https://leetcode.com/problems/minimum-window-substring/","nn":17,"status":"done","grade":"A"},
-        {"slug":"longest-substring-without-repeating-characters","numericId":3,"name":"Longest Substring Without Repeating Characters","url":"https://leetcode.com/problems/longest-substring-without-repeating-characters/","nn":18,"status":"in-progress","grade":null}
+        {"slug":"longest-substring-without-repeating-characters","numericId":3,"name":"Longest Substring Without Repeating Characters","url":"https://leetcode.com/problems/longest-substring-without-repeating-characters/","nn":18,"status":"done","grade":"A"}
       ]
     },
     "two-pointers": {
