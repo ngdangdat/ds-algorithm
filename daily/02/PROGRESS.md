@@ -19,7 +19,7 @@
 | 54 | ✅ | Spiral Matrix | A |
 | 15 | ✅ | 3Sum | A |
 | 18 | ✅ | 4Sum | A |
-| 560 | ⬜ | Subarray Sum Equals K | — |
+| 560 | ✅ | Subarray Sum Equals K | A |
 | 239 | ✅ | Sliding Window Maximum | A |
 | 76 | ✅ | Minimum Window Substring | A |
 | 3 | ⬜ | Longest Substring Without Repeating Characters | — |
