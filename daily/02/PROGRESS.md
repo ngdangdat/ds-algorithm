@@ -28,7 +28,7 @@
 
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
-| 344 | ⬜ | Reverse String | — |
+| 344 | ✅ | Reverse String | A |
 | 125 | ⬜ | Valid Palindrome | — |
 | 26 | ⬜ | Remove Duplicates from Sorted Array | — |
 | 283 | ⬜ | Move Zeroes | — |

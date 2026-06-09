@@ -1,9 +1,9 @@
 {
   "currentProblem": {
     "category": "two-pointers",
-    "slug": "reverse-string"
+    "slug": "valid-palindrome"
   },
-  "globalNN": 13,
+  "globalNN": 20,
   "categories": {
     "arrays-and-hashing": {
       "order": 0,
@@ -34,7 +34,7 @@
       "order": 1,
       "displayName": "Two Pointers",
       "problems": [
-        {"slug":"reverse-string","numericId":344,"name":"Reverse String","url":"https://leetcode.com/problems/reverse-string/","nn":19,"status":"pending","grade":null},
+        {"slug":"reverse-string","numericId":344,"name":"Reverse String","url":"https://leetcode.com/problems/reverse-string/","nn":19,"status":"done","grade":"A"},
         {"slug":"valid-palindrome","numericId":125,"name":"Valid Palindrome","url":"https://leetcode.com/problems/valid-palindrome/","nn":20,"status":"pending","grade":null},
         {"slug":"remove-duplicates-from-sorted-array","numericId":26,"name":"Remove Duplicates from Sorted Array","url":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","nn":21,"status":"pending","grade":null},
         {"slug":"move-zeroes","numericId":283,"name":"Move Zeroes","url":"https://leetcode.com/problems/move-zeroes/","nn":22,"status":"pending","grade":null},
