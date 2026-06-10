@@ -30,7 +30,7 @@
 |---|--------|---------|-------|
 | 344 | ✅ | Reverse String | A |
 | 125 | ✅ | Valid Palindrome | B |
-| 26 | ⬜ | Remove Duplicates from Sorted Array | — |
+| 26 | ✅ | Remove Duplicates from Sorted Array | C |
 | 283 | ⬜ | Move Zeroes | — |
 | 167 | ⬜ | Two Sum II | — |
 | 88 | ⬜ | Merge Sorted Array | — |
