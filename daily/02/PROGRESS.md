@@ -29,7 +29,7 @@
 | # | Status | Problem | Grade |
 |---|--------|---------|-------|
 | 344 | ✅ | Reverse String | A |
-| 125 | ⬜ | Valid Palindrome | — |
+| 125 | ✅ | Valid Palindrome | B |
 | 26 | ⬜ | Remove Duplicates from Sorted Array | — |
 | 283 | ⬜ | Move Zeroes | — |
 | 167 | ⬜ | Two Sum II | — |
