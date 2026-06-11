@@ -32,7 +32,7 @@
 | 125 | ✅ | Valid Palindrome | B |
 | 26 | ✅ | Remove Duplicates from Sorted Array | A |
 | 283 | ✅ | Move Zeroes | A |
-| 167 | ⬜ | Two Sum II | — |
+| 167 | ✅ | Two Sum II | A |
 | 88 | ⬜ | Merge Sorted Array | — |
 | 141 | ⬜ | Linked List Cycle | — |
 | 15 | ⬜ | 3Sum | — |
