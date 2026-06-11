@@ -13,11 +13,6 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 		}
 		r--
 	}
-	for r >= 0 && l1 >= 0 {
-		nums1[r] = nums1[l1]
-		l1--
-		r--
-	}
 	for r >= 0 && l2 >= 0 {
 		nums1[r] = nums2[l2]
 		l2--
