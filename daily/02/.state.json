@@ -1,9 +1,9 @@
 {
   "currentProblem": {
     "category": "two-pointers",
-    "slug": "move-zeroes"
+    "slug": "two-sum-ii-input-array-is-sorted"
   },
-  "globalNN": 22,
+  "globalNN": 23,
   "categories": {
     "arrays-and-hashing": {
       "order": 0,
@@ -37,7 +37,7 @@
         {"slug":"reverse-string","numericId":344,"name":"Reverse String","url":"https://leetcode.com/problems/reverse-string/","nn":19,"status":"done","grade":"A"},
         {"slug":"valid-palindrome","numericId":125,"name":"Valid Palindrome","url":"https://leetcode.com/problems/valid-palindrome/","nn":20,"status":"done","grade":"B"},
         {"slug":"remove-duplicates-from-sorted-array","numericId":26,"name":"Remove Duplicates from Sorted Array","url":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","nn":21,"status":"done","grade":"A"},
-        {"slug":"move-zeroes","numericId":283,"name":"Move Zeroes","url":"https://leetcode.com/problems/move-zeroes/","nn":22,"status":"pending","grade":null},
+        {"slug":"move-zeroes","numericId":283,"name":"Move Zeroes","url":"https://leetcode.com/problems/move-zeroes/","nn":22,"status":"done","grade":"B"},
         {"slug":"two-sum-ii-input-array-is-sorted","numericId":167,"name":"Two Sum II","url":"https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/","nn":23,"status":"pending","grade":null},
         {"slug":"merge-sorted-array","numericId":88,"name":"Merge Sorted Array","url":"https://leetcode.com/problems/merge-sorted-array/","nn":24,"status":"pending","grade":null},
         {"slug":"linked-list-cycle","numericId":141,"name":"Linked List Cycle","url":"https://leetcode.com/problems/linked-list-cycle/","nn":25,"status":"pending","grade":null},
