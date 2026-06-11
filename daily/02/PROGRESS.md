@@ -33,7 +33,7 @@
 | 26 | ✅ | Remove Duplicates from Sorted Array | A |
 | 283 | ✅ | Move Zeroes | A |
 | 167 | ✅ | Two Sum II | A |
-| 88 | ⬜ | Merge Sorted Array | — |
+| 88 | ✅ | Merge Sorted Array | B |
 | 141 | ⬜ | Linked List Cycle | — |
 | 15 | ⬜ | 3Sum | — |
 | 11 | ⬜ | Container With Most Water | — |
