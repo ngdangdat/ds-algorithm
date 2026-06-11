@@ -31,7 +31,7 @@
 | 344 | ✅ | Reverse String | A |
 | 125 | ✅ | Valid Palindrome | B |
 | 26 | ✅ | Remove Duplicates from Sorted Array | A |
-| 283 | ✅ | Move Zeroes | B |
+| 283 | ✅ | Move Zeroes | A |
 | 167 | ⬜ | Two Sum II | — |
 | 88 | ⬜ | Merge Sorted Array | — |
 | 141 | ⬜ | Linked List Cycle | — |
