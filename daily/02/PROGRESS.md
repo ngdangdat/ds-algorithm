@@ -34,7 +34,7 @@
 | 283 | ✅ | Move Zeroes | A |
 | 167 | ✅ | Two Sum II | A |
 | 88 | ✅ | Merge Sorted Array | A |
-| 141 | ✅ | Linked List Cycle | B |
+| 141 | ✅ | Linked List Cycle | A |
 | 15 | ⬜ | 3Sum | — |
 | 11 | ⬜ | Container With Most Water | — |
 | 75 | ⬜ | Sort Colors | — |

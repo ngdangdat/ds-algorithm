@@ -13,17 +13,17 @@ type ListNode struct {
 }
 
 func hasCycle(head *ListNode) bool {
-	f, s := head, head
-	i := 1
-	for f != nil && s != nil {
-		f = f.Next
-		if i%2 == 0 {
-			s = s.Next
+	fast, slow := head, head
+	for fast != nil {
+		fast = fast.Next
+		if fast == nil {
+			break
 		}
-		if f == s {
+		fast = fast.Next
+		slow = slow.Next
+		if fast == slow {
 			return true
 		}
-		i++
 	}
 	return false
 }

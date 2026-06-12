@@ -40,7 +40,7 @@
         {"slug":"move-zeroes","numericId":283,"name":"Move Zeroes","url":"https://leetcode.com/problems/move-zeroes/","nn":22,"status":"done","grade":"A"},
         {"slug":"two-sum-ii-input-array-is-sorted","numericId":167,"name":"Two Sum II","url":"https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/","nn":23,"status":"done","grade":"A"},
         {"slug":"merge-sorted-array","numericId":88,"name":"Merge Sorted Array","url":"https://leetcode.com/problems/merge-sorted-array/","nn":24,"status":"done","grade":"A"},
-        {"slug":"linked-list-cycle","numericId":141,"name":"Linked List Cycle","url":"https://leetcode.com/problems/linked-list-cycle/","nn":25,"status":"done","grade":"B"},
+        {"slug":"linked-list-cycle","numericId":141,"name":"Linked List Cycle","url":"https://leetcode.com/problems/linked-list-cycle/","nn":25,"status":"done","grade":"A"},
         {"slug":"3sum","numericId":15,"name":"3Sum","url":"https://leetcode.com/problems/3sum/","nn":26,"status":"pending","grade":null},
         {"slug":"container-with-most-water","numericId":11,"name":"Container With Most Water","url":"https://leetcode.com/problems/container-with-most-water/","nn":27,"status":"pending","grade":null},
         {"slug":"sort-colors","numericId":75,"name":"Sort Colors","url":"https://leetcode.com/problems/sort-colors/","nn":28,"status":"pending","grade":null},
