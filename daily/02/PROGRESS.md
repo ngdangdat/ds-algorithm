@@ -35,7 +35,7 @@
 | 167 | ✅ | Two Sum II | A |
 | 88 | ✅ | Merge Sorted Array | A |
 | 141 | ✅ | Linked List Cycle | A |
-| 15 | ⬜ | 3Sum | — |
+| 15 | ✅ | 3Sum | B |
 | 11 | ⬜ | Container With Most Water | — |
 | 75 | ⬜ | Sort Colors | — |
 | 19 | ⬜ | Remove Nth Node From End of List | — |
