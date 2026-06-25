@@ -2,28 +2,33 @@ package main
 
 import "fmt"
 
-func biSearchRange(ns []int, n, l, r int) int {
-	if l > r {
-		return -1
+func binSearch(nums []int, target int, left int, right int) int {
+	if left < right {
+		mid := left + (right-left+1)/2
+		fmt.Printf("left=%d, right=%d, mid=%d\n", left, right, mid)
+		fmt.Printf("nums[left]=%d, nums[right]=%d, nums[mid]=%d\n", nums[left], nums[right], nums[mid])
+		if nums[mid] == target {
+			return mid
+		} else if nums[mid] > target {
+			return binSearch(nums, target, left, mid-1)
+		} else {
+			return binSearch(nums, target, mid+1, right)
+		}
 	}
-
-	mid := l + (r-l)/2
-	if ns[mid] > n {
-		return biSearchRange(ns, n, l, mid-1)
-	} else if ns[mid] < n {
-		return biSearchRange(ns, n, mid+1, r)
-	}
-	return mid
+	return -1
 }
 
-func biSearch(ns []int, n int) int {
-	return biSearchRange(ns, n, 0, len(ns)-1)
+func search(nums []int, target int) int {
+	fmt.Printf("nums=%v\n", nums)
+	return binSearch(nums, target, 0, len(nums)-1)
 }
 
 func main() {
-	ns1 := []int{1, 2, 3, 4, 9, 10, 25}
-	n1 := 4
+	nums1 := []int{1, 4, 5, 7, 9, 21}
 
-	res1 := biSearch(ns1, n1)
-	fmt.Printf("ex1, ns=%v, n=%v, res=%v\n", ns1, n1, res1)
+	res1 := search(nums1, 7)
+	fmt.Printf("7 res1=%d\n", res1)
+	res2 := search(nums1, 78)
+	fmt.Printf("78 res2=%d\n", res2)
+
 }
