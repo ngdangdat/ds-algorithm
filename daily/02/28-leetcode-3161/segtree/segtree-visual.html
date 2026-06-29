@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max Segment Tree — Visual Guide</title>
+<style>
+  :root {
+    --bg: #0f1117; --panel: #181b24; --ink: #e6e9ef; --muted: #9aa3b2;
+    --line: #2a2f3c; --accent: #6ea8fe;
+    --inside: #2e7d49; --inside-b: #57d98a;
+    --outside: #3a3f4b; --outside-b: #6b7280;
+    --partial: #8a6d1f; --partial-b: #e6c84a;
+    --path: #7a3a8a; --path-b: #d98ae6;
+    --leaf: #1f3550;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 20px 80px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 32px 0 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .sub { color: var(--muted); margin: 0 0 18px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin: 14px 0; }
+  code { background: #0b0d12; padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+  .card { background: #11141c; border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+  .card h3 { margin: 0 0 8px; font-size: 14px; color: var(--accent); letter-spacing: .3px; text-transform: uppercase; }
+  ul { margin: 6px 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  /* controls */
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; }
+  .ctl { display: flex; flex-direction: column; gap: 4px; }
+  .ctl label { font-size: 12px; color: var(--muted); }
+  input { background: #0b0d12; color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 7px 9px; font-size: 14px; }
+  input[type=number] { width: 70px; }
+  input#arr { width: 240px; }
+  button { background: var(--accent); color: #06122b; border: 0; border-radius: 7px; padding: 8px 14px; font-weight: 650; cursor: pointer; font-size: 14px; }
+  button.ghost { background: #232838; color: var(--ink); }
+  button:hover { filter: brightness(1.08); }
+  /* svg tree */
+  .stage { overflow-x: auto; }
+  svg { display: block; margin: 6px auto; }
+  .node rect { stroke-width: 2; rx: 8; }
+  .node text { fill: var(--ink); font: 600 13px monospace; text-anchor: middle; }
+  .node .idx { fill: var(--muted); font: 500 10px monospace; }
+  .node .rng { fill: var(--muted); font: 500 9px monospace; }
+  .edge { stroke: var(--line); stroke-width: 2; }
+  /* array row */
+  .arr { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .cell { min-width: 52px; text-align: center; border: 1px solid var(--line); border-radius: 8px; padding: 6px 4px; background: #11141c; }
+  .cell .i { font: 500 10px monospace; color: var(--muted); }
+  .cell .v { font: 600 16px monospace; }
+  .cell.leaf { background: var(--leaf); }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin: 10px 0 2px; font-size: 13px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 14px; height: 14px; border-radius: 4px; border: 2px solid; display: inline-block; }
+  .result { font-size: 16px; margin-top: 10px; }
+  .result b { color: var(--inside-b); }
+  .log { font: 12px/1.5 monospace; color: var(--muted); white-space: pre-wrap; margin-top: 10px; max-height: 180px; overflow: auto; background:#0b0d12; border-radius:8px; padding:10px; }
+  .tag { display:inline-block; padding:1px 7px; border-radius: 5px; font:600 11px monospace; }
+  .t-in { background: var(--inside); color: #eafff1; }
+  .t-out { background: var(--outside); color: #e8eaef; }
+  .t-part { background: var(--partial); color: #fff7df; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Max Segment Tree</h1>
+  <p class="sub">Point update + range-max, both in O(log n). The visual guide for LeetCode 3161.</p>
+
+  <h2>1. The one-sentence idea</h2>
+  <div class="panel">
+    A segment tree is <b>one flat array of ints</b>. The second half holds your real values (the leaves);
+    the first half holds <b>range maxes</b> that let a query skip whole chunks instead of scanning. Think of a
+    <b>sports tournament</b>: each match's winner (the bigger number) advances, and the champion is the overall max.
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <h3>Why it's fast</h3>
+        <ul>
+          <li><b>Query</b> a range: grab whole subtrees that sit fully inside — read one summary, don't descend. Only the 2 edges of the range force splits → ~2·log n nodes.</li>
+          <li><b>Update</b> one element: only the path from that leaf up to the root changes (log n nodes). Sibling subtrees are independent and untouched.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Index math (1-indexed, root = 1)</h3>
+        <ul>
+          <li>element <code>i</code> → leaf slot <code>n + i</code></li>
+          <li>left child = <code>2·i</code>, right child = <code>2·i + 1</code></li>
+          <li>parent = <code>i / 2</code> (integer division)</li>
+          <li><code>nodes[i] = max(nodes[2i], nodes[2i+1])</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>2. Play with it</h2>
+  <div class="panel">
+    <div class="controls">
+      <div class="ctl">
+        <label>array values (comma-separated)</label>
+        <input id="arr" value="2,8,1,5">
+      </div>
+      <button class="ghost" onclick="rebuild()">Build tree</button>
+    </div>
+    <div class="arr" id="arrRow"></div>
+    <p class="sub" style="margin:10px 0 0">Leaves are highlighted. The values need <b>not</b> be sorted — max works on any order.</p>
+  </div>
+
+  <div class="stage panel">
+    <div class="legend">
+      <span class="chip"><span class="sw" style="border-color:var(--inside-b);background:var(--inside)"></span> fully inside → return its max</span>
+      <span class="chip"><span class="sw" style="border-color:var(--outside-b);background:var(--outside)"></span> fully outside → return 0</span>
+      <span class="chip"><span class="sw" style="border-color:var(--partial-b);background:var(--partial)"></span> partial → split &amp; recurse</span>
+      <span class="chip"><span class="sw" style="border-color:var(--path-b);background:var(--path)"></span> update path</span>
+    </div>
+    <div id="tree"></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3 style="margin-top:0;color:var(--accent)">MaxRange(l, r) — query</h3>
+      <div class="controls">
+        <div class="ctl"><label>l</label><input type="number" id="ql" value="1" min="0"></div>
+        <div class="ctl"><label>r (inclusive)</label><input type="number" id="qr" value="3" min="0"></div>
+        <button onclick="runQuery()">Run query</button>
+      </div>
+      <div class="result" id="qResult"></div>
+      <div class="log" id="qLog"></div>
+    </div>
+    <div class="panel">
+      <h3 style="margin-top:0;color:var(--accent)">Set(i, v) — point update</h3>
+      <div class="controls">
+        <div class="ctl"><label>i (element)</label><input type="number" id="si" value="2" min="0"></div>
+        <div class="ctl"><label>v</label><input type="number" id="sv" value="9"></div>
+        <button onclick="runSet()">Run update</button>
+      </div>
+      <div class="result" id="sResult"></div>
+      <div class="log" id="sLog"></div>
+    </div>
+  </div>
+
+  <h2>3. How this maps to the obstacle problem</h2>
+  <div class="panel">
+    <ul>
+      <li><b>Array index</b> = a (coordinate-compressed) <b>position</b> on the number line.</li>
+      <li><b>Value at a position</b> = <code>gap[p] = p − (nearest obstacle to its left)</code>; <code>0</code> where there's no obstacle. Each gap is owned by the obstacle on its <b>right</b> edge — so no double counting.</li>
+      <li><b>Type-2 query</b> <code>[2,x,sz]</code> = <code>max(A, B) ≥ sz</code> where
+        <b>A = MaxRange(0, indexOf(x))</b> (biggest gap between obstacles both ≤ x) and
+        <b>B = x − floor(x)</b> (trailing gap from last obstacle out to x — handled outside the tree).</li>
+      <li><b>Type-1 insert</b> at <code>p</code>: <code>Set(p, p−L)</code>, and if a right neighbor <code>R</code> exists, <code>Set(R, R−p)</code> (its gap <b>shrinks</b> — the decrease only a segment tree, not a Fenwick-max, can do).</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+let n = 4, size = 4, nodes = [];
+
+function nextPow2(x){ let p = 1; while (p < x) p <<= 1; return p; }
+
+function build(vals){
+  n = vals.length;
+  size = nextPow2(Math.max(1, n));
+  nodes = new Array(2*size).fill(0);
+  // place leaves
+  for (let i = 0; i < n; i++) nodes[size + i] = vals[i];
+  // build internal maxes
+  for (let i = size - 1; i >= 1; i--) nodes[i] = Math.max(nodes[2*i], nodes[2*i+1]);
+}
+
+function rangeOf(node){
+  // node covers a contiguous block of leaves; compute [lo,hi] in element space
+  let lvlStart = 1, width = size;
+  while (node >= lvlStart*2){ lvlStart *= 2; width /= 2; }
+  const offset = node - lvlStart;
+  return [offset*width, offset*width + width - 1];
+}
+
+// ---------- rendering ----------
+function renderArray(){
+  const row = document.getElementById('arrRow');
+  row.innerHTML = '';
+  for (let i = 0; i < n; i++){
+    const c = document.createElement('div');
+    c.className = 'cell leaf';
+    c.innerHTML = `<div class="i">a[${i}] · slot ${size+i}</div><div class="v">${nodes[size+i]}</div>`;
+    row.appendChild(c);
+  }
+}
+
+let nodePos = {}; // node -> {x,y}
+function renderTree(highlight){
+  highlight = highlight || {};
+  const levels = Math.log2(size) + 1;
+  const leafW = 84, rowH = 92, pad = 30;
+  const W = size * leafW + pad*2;
+  const H = levels * rowH + pad*2;
+  let svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+  nodePos = {};
+
+  // assign positions per node by its leaf-range center
+  const total = 2*size;
+  for (let node = 1; node < total; node++){
+    const [lo, hi] = rangeOf(node);
+    const cx = pad + ((lo + hi)/2 + 0.5) * leafW;
+    // depth
+    let depth = Math.floor(Math.log2(node));
+    const cy = pad + depth * rowH + 22;
+    nodePos[node] = {x: cx, y: cy};
+  }
+  // edges first
+  for (let node = 1; node < size; node++){
+    for (const ch of [2*node, 2*node+1]){
+      if (ch < total){
+        const a = nodePos[node], b = nodePos[ch];
+        svg += `<line class="edge" x1="${a.x}" y1="${a.y+16}" x2="${b.x}" y2="${b.y-16}"/>`;
+      }
+    }
+  }
+  // nodes
+  for (let node = 1; node < total; node++){
+    const p = nodePos[node];
+    const [lo, hi] = rangeOf(node);
+    const isLeaf = node >= size;
+    let fill = isLeaf ? 'var(--leaf)' : '#1b2030';
+    let stroke = 'var(--line)';
+    const h = highlight[node];
+    if (h === 'inside'){ fill='var(--inside)'; stroke='var(--inside-b)'; }
+    else if (h === 'outside'){ fill='var(--outside)'; stroke='var(--outside-b)'; }
+    else if (h === 'partial'){ fill='var(--partial)'; stroke='var(--partial-b)'; }
+    else if (h === 'path'){ fill='var(--path)'; stroke='var(--path-b)'; }
+    const rngLabel = isLeaf ? `a[${lo}]` : `[${lo},${hi}]`;
+    const w = 64, hh = 34;
+    svg += `<g class="node">
+      <rect x="${p.x-w/2}" y="${p.y-hh/2}" width="${w}" height="${hh}" fill="${fill}" stroke="${stroke}"/>
+      <text class="idx" x="${p.x}" y="${p.y-hh/2-4}">#${node}</text>
+      <text x="${p.x}" y="${p.y+1}">${nodes[node]}</text>
+      <text class="rng" x="${p.x}" y="${p.y+13}">${rngLabel}</text>
+    </g>`;
+  }
+  svg += `</svg>`;
+  document.getElementById('tree').innerHTML = svg;
+}
+
+// ---------- operations with traces ----------
+function runQuery(){
+  const l = parseInt(document.getElementById('ql').value, 10);
+  const r = parseInt(document.getElementById('qr').value, 10);
+  const hi = {}; const log = [];
+  if (l > r){
+    document.getElementById('qResult').innerHTML = `empty range (l &gt; r) → <b>0</b>`;
+    document.getElementById('qLog').textContent = 'l > r → return 0';
+    renderTree({});
+    return;
+  }
+  function q(node, lo, hh){
+    if (hh < l || r < lo){ hi[node] = 'outside'; log.push(`#${node} [${lo},${hh}]  OUTSIDE → 0`); return 0; }
+    if (l <= lo && hh <= r){ hi[node] = 'inside'; log.push(`#${node} [${lo},${hh}]  INSIDE → nodes[#${node}] = ${nodes[node]}`); return nodes[node]; }
+    hi[node] = 'partial';
+    const mid = (lo + hh) >> 1;
+    log.push(`#${node} [${lo},${hh}]  PARTIAL → split at ${mid}`);
+    const a = q(2*node, lo, mid);
+    const b = q(2*node+1, mid+1, hh);
+    return Math.max(a, b);
+  }
+  const ans = q(1, 0, size-1);
+  renderTree(hi);
+  document.getElementById('qResult').innerHTML = `MaxRange(${l}, ${r}) = <b>${ans}</b>`;
+  document.getElementById('qLog').textContent = log.join('\n');
+}
+
+function runSet(){
+  const i = parseInt(document.getElementById('si').value, 10);
+  const v = parseInt(document.getElementById('sv').value, 10);
+  if (i < 0 || i >= n){
+    document.getElementById('sResult').textContent = `i must be in 0..${n-1}`;
+    return;
+  }
+  const log = [];
+  let pos = size + i;
+  nodes[pos] = v;
+  const hi = {}; hi[pos] = 'path';
+  log.push(`leaf #${pos} = ${v}`);
+  while (pos > 1){
+    pos = pos >> 1;
+    nodes[pos] = Math.max(nodes[2*pos], nodes[2*pos+1]);
+    hi[pos] = 'path';
+    log.push(`#${pos} = max(#${2*pos}=${nodes[2*pos]}, #${2*pos+1}=${nodes[2*pos+1]}) = ${nodes[pos]}`);
+  }
+  renderArray();
+  renderTree(hi);
+  document.getElementById('sResult').innerHTML = `Set(${i}, ${v}) — updated <b>${log.length}</b> nodes along the path`;
+  document.getElementById('sLog').textContent = log.join('\n');
+}
+
+function rebuild(){
+  const raw = document.getElementById('arr').value.split(',').map(s => parseInt(s.trim(),10)).filter(x => !Number.isNaN(x));
+  build(raw.length ? raw : [0]);
+  renderArray();
+  renderTree({});
+  document.getElementById('qResult').textContent = '';
+  document.getElementById('qLog').textContent = '';
+  document.getElementById('sResult').textContent = '';
+  document.getElementById('sLog').textContent = '';
+}
+
+rebuild();
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LeetCode 3161 — Block Placement, visualized</title>
+<style>
+  :root{
+    --bg:#0f1117; --panel:#181b24; --ink:#e6e9ef; --muted:#9aa3b2; --line:#2a2f3c;
+    --accent:#6ea8fe; --obs:#e05a5a; --gap:#1f3550; --gapmax:#2e7d49; --gapmax-b:#57d98a;
+    --block:#d98ae6; --new:#e6c84a; --shrink:#e69a4a; --shade:#6ea8fe22;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:26px 20px 80px}
+  h1{font-size:24px;margin:0 0 4px}
+  h2{font-size:17px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sub{color:var(--muted);margin:0 0 16px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+  code{background:#0b0d12;padding:1px 6px;border-radius:5px;font-size:13px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:end}
+  .ctl{display:flex;flex-direction:column;gap:4px}
+  .ctl label{font-size:12px;color:var(--muted)}
+  input{background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:7px 9px;font-size:14px;width:80px}
+  button{background:var(--accent);color:#06122b;border:0;border-radius:7px;padding:8px 14px;font-weight:650;cursor:pointer;font-size:14px}
+  button.ghost{background:#232838;color:var(--ink)}
+  button:hover{filter:brightness(1.08)}
+  svg{display:block;margin:4px auto;max-width:100%}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:8px 0;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:14px;height:14px;border-radius:4px;display:inline-block;border:2px solid}
+  .verdict{font-size:18px;margin-top:10px}
+  .verdict b.yes{color:var(--gapmax-b)}
+  .verdict b.no{color:var(--obs)}
+  table{border-collapse:collapse;width:100%;font:13px monospace;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:5px 8px;text-align:center}
+  th{color:var(--muted);font-weight:600}
+  td.hl{background:var(--gapmax);color:#eafff1;font-weight:700}
+  .log{font:12px/1.5 monospace;color:var(--muted);white-space:pre-wrap;margin-top:10px;background:#0b0d12;border-radius:8px;padding:10px}
+  .pill{display:inline-block;padding:1px 8px;border-radius:6px;font:600 12px monospace}
+  .pA{background:var(--gapmax);color:#eafff1}
+  .pB{background:#7a3a8a;color:#f3d9ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Block Placement Queries — visualized</h1>
+  <p class="sub">LeetCode 3161. Obstacles split the line into gaps; a query asks if a size-<code>sz</code> block fits in <code>[0, x]</code>.</p>
+
+  <div class="panel">
+    <div class="controls">
+      <div class="ctl"><label>build obstacle at x</label><input type="number" id="obsX" value="6" min="1"></div>
+      <button onclick="addObstacle()">＋ Add obstacle (type 1)</button>
+      <span style="flex:1"></span>
+      <button class="ghost" onclick="reset()">Reset</button>
+    </div>
+    <div class="controls" style="margin-top:12px">
+      <div class="ctl"><label>query range x</label><input type="number" id="qx" value="14" min="1"></div>
+      <div class="ctl"><label>block size sz</label><input type="number" id="qsz" value="5" min="1"></div>
+      <button onclick="runQuery()">▶ Check placement (type 2)</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="legend">
+      <span class="chip"><span class="sw" style="border-color:var(--obs);background:var(--obs)"></span> obstacle</span>
+      <span class="chip"><span class="sw" style="border-color:var(--gapmax-b);background:var(--gapmax)"></span> the winning gap (max in [0,x])</span>
+      <span class="chip"><span class="sw" style="border-color:var(--block);background:var(--block)"></span> placed block (size sz)</span>
+      <span class="chip"><span class="sw" style="border-color:var(--new);background:var(--new)"></span> new gap on insert</span>
+      <span class="chip"><span class="sw" style="border-color:var(--shrink);background:var(--shrink)"></span> shrunk neighbor gap</span>
+    </div>
+    <div id="line"></div>
+    <div class="verdict" id="verdict"></div>
+    <div class="log" id="log">Add some obstacles, then run a query.</div>
+  </div>
+
+  <h2>Gap ledger — what the segment tree stores</h2>
+  <p class="sub">Each obstacle owns the gap to its <b>left</b>: <code>gap[p] = p − (previous obstacle)</code>. Stored at the obstacle's compressed index. This is exactly the segment tree's leaf array.</p>
+  <div class="panel" id="ledger"></div>
+
+  <h2>How a query is answered</h2>
+  <div class="panel">
+    <p style="margin:0 0 8px">Answer = <code>max(A, B) ≥ sz</code>:</p>
+    <ul style="margin:0">
+      <li><span class="pill pA">Part A</span> = biggest gap between obstacles both <code>≤ x</code> &nbsp;→&nbsp; <code>segtree.MaxRange(0, index_of(x))</code></li>
+      <li><span class="pill pB">Part B</span> = trailing gap <code>x − floor(x)</code>, where <code>floor(x)</code> = largest obstacle <code>≤ x</code> (not in the tree → computed separately)</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const LINE_MAX = 20;
+let obstacles = []; // sorted positions
+let lastInsert = null; // {p, R}
+
+function reset(){ obstacles = []; lastInsert = null; render(); document.getElementById('verdict').innerHTML=''; document.getElementById('log').textContent='Add some obstacles, then run a query.'; }
+
+function addObstacle(){
+  const p = parseInt(document.getElementById('obsX').value,10);
+  if(isNaN(p) || p<1 || p>LINE_MAX){ flash(`x must be 1..${LINE_MAX}`); return; }
+  if(obstacles.includes(p)){ flash(`obstacle already at ${p}`); return; }
+  // neighbors BEFORE inserting
+  const L = obstacles.filter(o=>o<p).reduce((a,b)=>Math.max(a,b),0);
+  const Rarr = obstacles.filter(o=>o>p);
+  const R = Rarr.length ? Math.min(...Rarr) : null;
+  obstacles.push(p); obstacles.sort((a,b)=>a-b);
+  lastInsert = {p, R, L};
+  render();
+  let msg = `Insert obstacle at ${p}.  left neighbor L=${L}` + (R!==null?`, right neighbor R=${R}`:`, no right neighbor`) + `\n`;
+  msg += `  Set(index_of(${p}), gap = ${p}−${L} = ${p-L})   ← new obstacle's left-gap\n`;
+  if(R!==null) msg += `  Set(index_of(${R}), gap = ${R}−${p} = ${R-p})   ← R's gap SHRINKS (was ${R-L})\n`;
+  msg += `  (two Set calls — nothing else changes)`;
+  document.getElementById('log').textContent = msg;
+  document.getElementById('verdict').innerHTML='';
+}
+
+// gaps over [0, upper]: enumerate (prev, o) for obstacles<=upper, then (prev, upper)
+function gapsInRange(upper){
+  const within = obstacles.filter(o=>o<=upper);
+  const gaps = [];
+  let prev = 0;
+  for(const o of within){ gaps.push({start:prev,end:o,len:o-prev,kind:'A',owner:o}); prev=o; }
+  gaps.push({start:prev,end:upper,len:upper-prev,kind:'B',owner:null}); // trailing
+  return gaps;
+}
+
+let queryState = null;
+function runQuery(){
+  const x = parseInt(document.getElementById('qx').value,10);
+  const sz = parseInt(document.getElementById('qsz').value,10);
+  if(isNaN(x)||x<1||x>LINE_MAX){ flash(`x must be 1..${LINE_MAX}`); return; }
+  if(isNaN(sz)||sz<1){ flash(`sz must be ≥ 1`); return; }
+  lastInsert = null;
+  const gaps = gapsInRange(x);
+  // winning gap = largest
+  let best = gaps[0];
+  for(const g of gaps) if(g.len>best.len) best=g;
+  const A = Math.max(0,...gaps.filter(g=>g.kind==='A').map(g=>g.len));
+  const B = gaps[gaps.length-1].len;
+  const fits = best.len>=sz;
+  queryState = {x, sz, best: fits?best:null};
+  render();
+  const floorX = obstacles.filter(o=>o<=x).reduce((a,b)=>Math.max(a,b),0);
+  let msg = `Query: place block of size ${sz} in [0, ${x}].\n`;
+  msg += `  gaps in [0,${x}]: ` + gaps.map(g=>`[${g.start},${g.end}]=${g.len}${g.kind==='B'?'(trailing)':''}`).join('  ') + `\n`;
+  msg += `  Part A (max gap between obstacles ≤ x) = ${A}\n`;
+  msg += `  Part B (trailing x − floor(x) = ${x} − ${floorX}) = ${B}\n`;
+  msg += `  max(A,B) = ${Math.max(A,B)}  ${Math.max(A,B)>=sz?'≥':'<'}  sz=${sz}`;
+  document.getElementById('log').textContent = msg;
+  document.getElementById('verdict').innerHTML = fits
+    ? `Block of size ${sz} <b class="yes">FITS</b> in [0,${x}] (in gap [${best.start},${best.end}], length ${best.len}).`
+    : `Block of size ${sz} does <b class="no">NOT fit</b> in [0,${x}] (largest gap is only ${best.len}).`;
+}
+
+function flash(m){ document.getElementById('log').textContent = m; }
+
+// ---------- rendering ----------
+function X(pos){ const m=44, usable=820; return m + pos/LINE_MAX*usable; }
+function render(){
+  const W=908, H=160, baseY=96;
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+  // query shade [0,x]
+  if(queryState){ s+=`<rect x="${X(0)}" y="40" width="${X(queryState.x)-X(0)}" height="72" fill="var(--shade)"/>`;
+    s+=`<text x="${X(queryState.x)}" y="34" fill="var(--accent)" font="600 12px monospace" text-anchor="middle">x=${queryState.x}</text>`; }
+  // axis
+  s+=`<line x1="${X(0)}" y1="${baseY}" x2="${X(LINE_MAX)}" y2="${baseY}" stroke="var(--line)" stroke-width="2"/>`;
+  for(let t=0;t<=LINE_MAX;t++){ const x=X(t);
+    s+=`<line x1="${x}" y1="${baseY-4}" x2="${x}" y2="${baseY+4}" stroke="var(--muted)" stroke-width="1"/>`;
+    if(t%2===0) s+=`<text x="${x}" y="${baseY+20}" fill="var(--muted)" font="11px monospace" text-anchor="middle">${t}</text>`;
+  }
+  // gaps relative to current obstacles over full line (for ledger context) + highlight winning gap
+  // draw winning gap
+  if(queryState && queryState.best){ const g=queryState.best;
+    s+=`<rect x="${X(g.start)}" y="${baseY-16}" width="${X(g.end)-X(g.start)}" height="32" rx="5" fill="var(--gapmax)" stroke="var(--gapmax-b)" stroke-width="2"/>`;
+    // placed block, left-aligned in the gap
+    const bEnd = Math.min(g.start+queryState.sz, g.end);
+    s+=`<rect x="${X(g.start)}" y="${baseY-12}" width="${X(bEnd)-X(g.start)}" height="24" rx="4" fill="var(--block)" opacity="0.92"/>`;
+    s+=`<text x="${X((g.start+bEnd)/2)}" y="${baseY+5}" fill="#2a0a33" font="700 12px monospace" text-anchor="middle">sz=${queryState.sz}</text>`;
+  }
+  // insert highlight: new gap + shrunk gap
+  if(lastInsert){ const {p,R,L}=lastInsert;
+    s+=`<rect x="${X(L)}" y="${baseY-14}" width="${X(p)-X(L)}" height="28" rx="5" fill="var(--new)" opacity="0.35" stroke="var(--new)" stroke-width="2"/>`;
+    if(R!==null) s+=`<rect x="${X(p)}" y="${baseY-14}" width="${X(R)-X(p)}" height="28" rx="5" fill="var(--shrink)" opacity="0.35" stroke="var(--shrink)" stroke-width="2"/>`;
+  }
+  // obstacles
+  for(const o of obstacles){ const x=X(o);
+    s+=`<line x1="${x}" y1="${baseY-30}" x2="${x}" y2="${baseY+10}" stroke="var(--obs)" stroke-width="3"/>`;
+    s+=`<circle cx="${x}" cy="${baseY-30}" r="4" fill="var(--obs)"/>`;
+    s+=`<text x="${x}" y="${baseY-38}" fill="var(--obs)" font="700 12px monospace" text-anchor="middle">${o}</text>`;
+  }
+  s+=`</svg>`;
+  document.getElementById('line').innerHTML=s;
+  renderLedger();
+}
+
+function renderLedger(){
+  if(obstacles.length===0){ document.getElementById('ledger').innerHTML='<span class="sub">No obstacles yet.</span>'; return; }
+  let prev=0, rows='';
+  obstacles.forEach((o,i)=>{ rows+=`<tr><td>${i}</td><td>${o}</td><td>${o} − ${prev} = <b>${o-prev}</b></td></tr>`; prev=o; });
+  document.getElementById('ledger').innerHTML =
+    `<table><tr><th>compressed index</th><th>position</th><th>gap value (segtree leaf)</th></tr>${rows}</table>`;
+}
+
+reset();
+</script>
+</body>
+</html>
